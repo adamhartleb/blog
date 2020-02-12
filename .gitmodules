@@ -1,6 +1,9 @@
 [submodule "themes/hugo-notepadium"]
 	path = themes/hugo-notepadium
 	url = https://github.com/cntrump/hugo-notepadium.git
+[submodule "themes/--force"]
+	path = themes/--force
+	url = https://github.com/adamhartleb/ghostwriter.git
 [submodule "themes/ghostwriter"]
 	path = themes/ghostwriter
-	url = https://github.com/jbub/ghostwriter.git
+	url = https://github.com/adamhartleb/ghostwriter.git
