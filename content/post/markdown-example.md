@@ -1,7 +1,7 @@
 +++
-title = "What does deprecating a module mean?"
-description = "npm module deprecation"
-date = 2020-02-12
+title = "Markdown Reference"
+description = "Markdown Reference"
+date = 2020-02-19
 author = "Adam Hartleb"
 +++
 
