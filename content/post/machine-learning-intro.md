@@ -3,6 +3,7 @@ title = "Machine Learning Intro"
 description = "My notes on machine learning"
 date = 2020-02-20
 author = "Adam Hartleb"
+draft = true
 +++
 
 # Introduction
