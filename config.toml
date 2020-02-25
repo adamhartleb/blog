@@ -1,35 +1,44 @@
-baseurl = "/"
+baseURL = "https://example.com"
 title = "Adam Hartleb"
-theme = "ghostwriter"
+theme = "hugo-notepadium"
+copyright = "©2020 Adam Hartleb."
 
-[Params]
-    mainSections = ["post"]
-    intro = true
-    headline = "Adam Hartleb"
-    github = "https://github.com/XXX"
-    twitter = "https://twitter.com/XXX"
-    email = "XXX@example.com"
-    opengraph = true
-    shareTwitter = true
-    dateFormat = "Mon, Jan 2, 2006"
+languageCode = "zh-cn"
+hasCJKLanguage = true
 
-[Permalinks]
-    post = "/:filename/"
+enableRobotsTXT = true
 
+# Enable Disqus
+#disqusShortname = "XXX"
 
-[[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
+# Google Analytics
+#googleAnalytics = "UA-123-45"
 
-[markup]
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true
-    style = "monokai"
-    tabWidth = 4
+[markup.highlight]
+codeFences = true
+noClasses = false
+
+[markup.goldmark.renderer]
+unsafe = true  # enable raw HTML in Markdown
+
+[params]
+style = "dark"  # default: auto. light: light theme, dark: dark theme, auto: based on system.
+dateFormat = "Monday, January 2, 2006"  # if unset, default is "2006-01-02"
+logo = ""  # if you have a logo png
+license = ""  # CC License
+
+[params.comments]
+enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
+
+[params.math]
+enable = false  # optional: true, false. Enable globally, default: false. You can always enable math on per page.
+use = "katex"  # option: "katex", "mathjax". default: "katex"
+
+[params.syntax]
+use = "none"  # builtin: "prismjs", "hljs". "none" means Chroma
+theme = "xcode"
+darkTheme = "xcode-dark"  # apply this theme in dark mode
+
+[params.nav]
+showCategories = false       # /categories/
+showTags = true             # /tags/

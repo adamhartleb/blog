@@ -2,6 +2,7 @@
 title: 'Intro to Object Oriented Programming'
 date: 2020-02-21T15:07:11-08:00
 draft: false
+tags: ['oop', 'intro']
 ---
 
 ### Introduction

@@ -2,6 +2,7 @@
 title: 'C# Inheritance'
 date: 2020-02-24T16:11:33-08:00
 draft: true
+tags: ['c#']
 ---
 
 Inheritance is a way to reuse methods and properties in a class by creating a more specific class (termed _subclass_ or _derived class_) which then inherits from a base/parent class. A quintessential example is a base class called `Polygon`. Now all polygons have a certain number of sides which we can model:

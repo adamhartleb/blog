@@ -2,6 +2,7 @@
 title: 'Intro to Typescript - Getting Started'
 date: 2020-02-24T10:48:11-08:00
 draft: false
+tags: ['typescript', 'intro']
 ---
 
 ### What is TypeScript?

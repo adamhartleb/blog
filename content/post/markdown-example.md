@@ -3,6 +3,7 @@ title = "Markdown Reference"
 description = "Markdown Reference"
 date = 2020-02-19
 author = "Adam Hartleb"
+tags = ["misc"]
 +++
 
 ## Introduction

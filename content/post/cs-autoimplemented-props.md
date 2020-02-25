@@ -3,6 +3,7 @@ title = "C# Autoimplemented Properties"
 description = "Learn how C#'s autoimplemented properties work."
 date = 2020-02-19
 author = "Adam Hartleb"
+tags = ["c#"]
 +++
 
 In object-oriented programming, you'll often be creating getters and setters for instance variables. For example:

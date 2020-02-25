@@ -1,7 +1,8 @@
 ---
 title: 'Intro to Rust - Hello World'
-date: 2020-02-24T15:06:48-08:00
-draft: true
+date: 2020-02-25T10:48:11-08:00
+draft: false
+tags: ['rust', 'intro']
 ---
 
 Installing and configuring Rust is a breeze with **rustup** which is an installer for Rust. You can download it by visiting:
