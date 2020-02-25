@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rust on Adam Hartleb</title>
+    <link>/tags/rust/</link>
+    <description>Recent content in rust on Adam Hartleb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>©2020 Adam Hartleb.</copyright>
+    <lastBuildDate>Tue, 25 Feb 2020 10:48:11 -0800</lastBuildDate>
+    
+        <atom:link href="/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intro to Rust - Hello World</title>
+      <link>/post/intro-to-rust-hello-world/</link>
+      <pubDate>Tue, 25 Feb 2020 10:48:11 -0800</pubDate>
+      
+      <guid>/post/intro-to-rust-hello-world/</guid>
+      <description>Installing and configuring Rust is a breeze with rustup which is an installer for Rust. You can download it by visiting:
+https://rustup.rs/
+And following the onscreen instructions. You can confirm that the installation has worked by running:
+rustc --version The rustup installation also comes with another command line tool called cargo which is the Rust packager manager &amp;ndash; akin to npm for Node. Rust packages are called crates and there is an online repository of crates visible here:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c# on Adam Hartleb</title>
+    <link>/tags/c#/</link>
+    <description>Recent content in c# on Adam Hartleb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>©2020 Adam Hartleb.</copyright>
+    <lastBuildDate>Thu, 20 Feb 2020 00:00:00 -0800</lastBuildDate>
+    
+        <atom:link href="/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C# Structs</title>
+      <link>/post/cs-structs/</link>
+      <pubDate>Thu, 20 Feb 2020 00:00:00 -0800</pubDate>
+      
+      <guid>/post/cs-structs/</guid>
+      <description>Structs and Classes are constructed very similarly in C#:
+struct Book { private string title; private int[] editions; public string Title { get { return title; } set { title = value; } } public string Author { get; set; } public int[] Editions { get { return editions; } set { editions = value; } } public string Blurb() { return $&amp;quot;{Title} by {Author}&amp;quot;; } } And they are instantiated in the same way:</description>
+    </item>
+    
+    <item>
+      <title>C# Autoimplemented Properties</title>
+      <link>/post/cs-autoimplemented-props/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 -0800</pubDate>
+      
+      <guid>/post/cs-autoimplemented-props/</guid>
+      <description>In object-oriented programming, you&amp;rsquo;ll often be creating getters and setters for instance variables. For example:
+class Book { private string title; public Book(string title) { this.title = title; } GetTitle() { return title; } SetTitle(string title) { this.title = title; } } The problem with this is that it&amp;rsquo;s verbose and creating getters and setters is extremely common so it becomes a little cumbersome. Now, you might be thinking &amp;ldquo;If I can just freely get and set the instance variable, why not make its accessibility public?</description>
+    </item>
+    
+  </channel>
+</rss>

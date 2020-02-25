@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oop on Adam Hartleb</title>
+    <link>/tags/oop/</link>
+    <description>Recent content in oop on Adam Hartleb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>©2020 Adam Hartleb.</copyright>
+    <lastBuildDate>Fri, 21 Feb 2020 15:07:11 -0800</lastBuildDate>
+    
+        <atom:link href="/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intro to Object Oriented Programming</title>
+      <link>/post/intro-to-oop/</link>
+      <pubDate>Fri, 21 Feb 2020 15:07:11 -0800</pubDate>
+      
+      <guid>/post/intro-to-oop/</guid>
+      <description>Introduction What exactly is an object? An object is defined by two components: properties and behaviors. A car has properties like its color, the year it was made, if it&amp;rsquo;s 4WD or not, etc. It also has behaviors such as starting, driving and so on. Having both of these components is key because if you just have behaviors then you&amp;rsquo;re simply dealing with functions that transform their inputs and return the output.</description>
+    </item>
+    
+  </channel>
+</rss>

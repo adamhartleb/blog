@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>http://example.org/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>http://example.org/</loc>
-  </url>
-  
-  <url>
-    <loc>http://example.org/tags/</loc>
-  </url>
-  
-</urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>https://example.com/</loc><lastmod>2020-02-25T10:48:11-08:00</lastmod></url><url>
+    <loc>https://example.com/tags/intro/</loc><lastmod>2020-02-25T10:48:11-08:00</lastmod></url><url>
+    <loc>https://example.com/post/intro-to-rust-hello-world/</loc><lastmod>2020-02-25T10:48:11-08:00</lastmod></url><url>
+    <loc>https://example.com/post/</loc><lastmod>2020-02-25T10:48:11-08:00</lastmod></url><url>
+    <loc>https://example.com/tags/rust/</loc><lastmod>2020-02-25T10:48:11-08:00</lastmod></url><url>
+    <loc>https://example.com/tags/</loc><lastmod>2020-02-25T10:48:11-08:00</lastmod></url><url>
+    <loc>https://example.com/post/intro-to-typescript/</loc><lastmod>2020-02-24T10:48:11-08:00</lastmod></url><url>
+    <loc>https://example.com/tags/typescript/</loc><lastmod>2020-02-24T10:48:11-08:00</lastmod></url><url>
+    <loc>https://example.com/post/intro-to-oop/</loc><lastmod>2020-02-21T15:07:11-08:00</lastmod></url><url>
+    <loc>https://example.com/tags/oop/</loc><lastmod>2020-02-21T15:07:11-08:00</lastmod></url><url>
+    <loc>https://example.com/tags/c#/</loc><lastmod>2020-02-20T00:00:00-08:00</lastmod></url><url>
+    <loc>https://example.com/post/cs-structs/</loc><lastmod>2020-02-20T00:00:00-08:00</lastmod></url><url>
+    <loc>https://example.com/post/cs-autoimplemented-props/</loc><lastmod>2020-02-19T00:00:00-08:00</lastmod></url><url>
+    <loc>https://example.com/post/markdown-example/</loc><lastmod>2020-02-19T00:00:00-08:00</lastmod></url><url>
+    <loc>https://example.com/tags/misc/</loc><lastmod>2020-02-19T00:00:00-08:00</lastmod></url><url>
+    <loc>https://example.com/categories/</loc></url></urlset>

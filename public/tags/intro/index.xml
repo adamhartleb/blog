@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>intro on Adam Hartleb</title>
+    <link>/tags/intro/</link>
+    <description>Recent content in intro on Adam Hartleb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>©2020 Adam Hartleb.</copyright>
+    <lastBuildDate>Tue, 25 Feb 2020 10:48:11 -0800</lastBuildDate>
+    
+        <atom:link href="/tags/intro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intro to Rust - Hello World</title>
+      <link>/post/intro-to-rust-hello-world/</link>
+      <pubDate>Tue, 25 Feb 2020 10:48:11 -0800</pubDate>
+      
+      <guid>/post/intro-to-rust-hello-world/</guid>
+      <description>Installing and configuring Rust is a breeze with rustup which is an installer for Rust. You can download it by visiting:
+https://rustup.rs/
+And following the onscreen instructions. You can confirm that the installation has worked by running:
+rustc --version The rustup installation also comes with another command line tool called cargo which is the Rust packager manager &amp;ndash; akin to npm for Node. Rust packages are called crates and there is an online repository of crates visible here:</description>
+    </item>
+    
+    <item>
+      <title>Intro to Typescript - Getting Started</title>
+      <link>/post/intro-to-typescript/</link>
+      <pubDate>Mon, 24 Feb 2020 10:48:11 -0800</pubDate>
+      
+      <guid>/post/intro-to-typescript/</guid>
+      <description>What is TypeScript? TypeScript is a transpile-to-JavaScript language meaning that a program written in Typescript must first be translated (transpiled) to JavaScript before it can be run in the browser. Although compiling typically has a different meaning, the TypeScript community refers to this process as compilation. Why would anyone want to go through this process though? Because TypeScript comes with a host of features on top of those already available in JavaScript, all aimed at making writing JavaScript code more robust.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Object Oriented Programming</title>
+      <link>/post/intro-to-oop/</link>
+      <pubDate>Fri, 21 Feb 2020 15:07:11 -0800</pubDate>
+      
+      <guid>/post/intro-to-oop/</guid>
+      <description>Introduction What exactly is an object? An object is defined by two components: properties and behaviors. A car has properties like its color, the year it was made, if it&amp;rsquo;s 4WD or not, etc. It also has behaviors such as starting, driving and so on. Having both of these components is key because if you just have behaviors then you&amp;rsquo;re simply dealing with functions that transform their inputs and return the output.</description>
+    </item>
+    
+  </channel>
+</rss>

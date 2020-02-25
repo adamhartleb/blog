@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>typescript on Adam Hartleb</title>
+    <link>/tags/typescript/</link>
+    <description>Recent content in typescript on Adam Hartleb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>©2020 Adam Hartleb.</copyright>
+    <lastBuildDate>Mon, 24 Feb 2020 10:48:11 -0800</lastBuildDate>
+    
+        <atom:link href="/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intro to Typescript - Getting Started</title>
+      <link>/post/intro-to-typescript/</link>
+      <pubDate>Mon, 24 Feb 2020 10:48:11 -0800</pubDate>
+      
+      <guid>/post/intro-to-typescript/</guid>
+      <description>What is TypeScript? TypeScript is a transpile-to-JavaScript language meaning that a program written in Typescript must first be translated (transpiled) to JavaScript before it can be run in the browser. Although compiling typically has a different meaning, the TypeScript community refers to this process as compilation. Why would anyone want to go through this process though? Because TypeScript comes with a host of features on top of those already available in JavaScript, all aimed at making writing JavaScript code more robust.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Intro to Rust - Hello World&nbsp;&ndash;&nbsp;Adam Hartleb</title><link rel="stylesheet" href="/css/core.min.3d2ce6cbea745ca5e44b1f033f9f76347756723f72cbf8309703e3a7a915de7995a8e15f07535317a2cdde891e32c936.css" integrity="sha384-PSzmy&#43;p0XKXkSx8DP592NHdWcj9yy/gwlwPjp6kV3nmVqOFfB1NTF6LN3okeMsk2"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">Adam Hartleb</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a></nav></div></span></div></section><div id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Intro to Rust - Hello World</h1><p class="article date">Tuesday, February 25, 2020</p></section><article class="article markdown-body"><p>Installing and configuring Rust is a breeze with <strong>rustup</strong> which is an installer for Rust. You can download it by visiting:</p>
+<p><a href="https://rustup.rs/">https://rustup.rs/</a></p>
+<p>And following the onscreen instructions. You can confirm that the installation has worked by running:</p>
+<pre><code>rustc --version
+</code></pre><p>The rustup installation also comes with another command line tool called <strong>cargo</strong> which is the Rust packager manager &ndash; akin to <strong>npm</strong> for Node. Rust packages are called <strong>crates</strong> and there is an online repository of crates visible here:</p>
+<p><a href="https://crates.io/">https://crates.io/</a></p>
+<p>To start a new Rust project, we&rsquo;ll run the following command:</p>
+<pre><code>cargo new --bin helloworld
+</code></pre><p>This will create a new folder called <code>helloworld</code> in your current working directory. The <code>--bin</code> flag creates a new binary crate which compiles into an executable to run. The alternative is a library crate <code>--lib</code> that are meant to be used in other projects.</p>
+<p>Inside the <code>helloworld</code> directory, you&rsquo;ll find a file called <code>Cargo.toml</code> which contains metadata and dependencies in our application (similar to <code>package.json</code> from npm) as well as the <code>src</code> directory where our source code lives. Inside the <code>src</code> folder you&rsquo;ll find a <code>main.rs</code> file with your typical &ldquo;Hello, world&rdquo; program ready to run. To run the program we can run:</p>
+<pre><code>cargo build
+</code></pre><p>This command generates some new files for us. It first creates a <code>Cargo.lock</code> which keeps track of the exact versions of the dependencies we used if we had any and a <code>target</code> folder. In <code>target</code> there&rsquo;s another folder called <code>debug</code> that contains the executable. We can now run our program:</p>
+<pre><code>&lt;!-- Use forward slashes on UNIX systems. --&gt;
+
+.\target\debug\helloworld
+</code></pre><p>The command above creates an unoptimized debug version of our code. If we want to prepare it for production, we can add the <code>--release</code> flag. Since we&rsquo;ll be frequently building and running our code in development, cargo provide a two-in-one command via:</p>
+<pre><code>cargo run
+</code></pre><p>Most importantly, your rustup installation comes with all the documentation for Rust as well as <strong>an entire book on learning Rust</strong> locally on your computer. You can access the documentation, by running:</p>
+<pre><code>rustup doc
+</code></pre></article><section class="article labels"><a class="tag" href=/tags/rust/>rust</a><a class="tag" href=/tags/intro/>intro</a></section></div><section class="article navigation"><p><a class="link" href="/post/intro-to-typescript/"><span class="li">&rarr;</span>Intro to Typescript - Getting Started</a></p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Adam Hartleb.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>
