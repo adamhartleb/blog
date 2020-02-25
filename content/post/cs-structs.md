@@ -3,7 +3,7 @@ title = "C# Structs"
 description = "Notes on structs in C#"
 date = 2020-02-20
 author = "Adam Hartleb"
-tags = ["c#"]
+tags = ["csharp"]
 +++
 
 Structs and Classes are constructed very similarly in C#:
