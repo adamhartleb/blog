@@ -69,4 +69,44 @@ class Square : Polygon
 }
 ```
 
-This will call the constructor in the parent class witht the value of `s`.
+This will call the constructor in the parent class with the value of `s`.
+
+### Protected
+
+In addition to the `public` and `private` access modifiers, there is also the `protected` modifier. If a field uses the `protected` modifier then anything inside of that class **and also** any method in a subclass can access the field.
+
+### object class
+
+All classes always inherit from a root class called `object`. That means you can create any type in C# with the `object` type:
+
+```
+object s = new Square();
+```
+
+### Sealed
+
+If you want to prevent a class from being inherited, you can declare it using the `sealed` keyword:
+
+```
+sealed class Square {}
+```
+
+### Partial
+
+Class definitions can be split across multiple files for readability using the partial keyword:
+
+```
+// file A.cs
+public partial class Square {}
+```
+
+```
+// file B.cs
+public partial class Square {}
+```
+
+You can also declare partial methods. It's a bit different than partial classes because there can only be one definition for a method, but you can define the method header in one partial class and the implementation in another. If you define the header for a method but never implement it, then any location in your code that calls the method will be removed by the compiler.
+
+### Multiple Inheritance
+
+Unlike languages like C++ and Python, C# does not support multiple inheritance so you can only ever inherit from one other class.
