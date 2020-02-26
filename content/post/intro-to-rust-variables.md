@@ -1,7 +1,7 @@
 ---
 title: 'Intro to Rust - Variables'
 date: 2020-02-26T10:48:11-08:00
-draft: true
+draft: false
 tags: ['rust', 'intro']
 ---
 
