@@ -110,3 +110,28 @@ You can also declare partial methods. It's a bit different than partial classes 
 ### Multiple Inheritance
 
 Unlike languages like C++ and Python, C# does not support multiple inheritance so you can only ever inherit from one other class.
+
+### Abstract and Virtual Methods
+
+An `abstract` method is a method defined on a base class that forces any other class that inherits from the base class to implement its own version of the method to override it. In contrast, a `virtual` method is also defined on the base class, but derived classes can choose to either keep the base implementation or override it if they so choose. In order to create an abstract method, the class must be declared with the `abstract` keyword.
+
+```
+abstract class Shape
+{
+    public abstract int Area();
+}
+
+class Square : Shape
+{
+    private int length;
+
+    public Square(int l) { length = l; }
+
+    public override int Area()
+    {
+        return length * length;
+    }
+}
+```
+
+Note that `Square`'s implementation of the `Area` method contains the `override` keyword which is required.
