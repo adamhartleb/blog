@@ -1,7 +1,8 @@
 ---
 title: 'C# Interfaces'
-date: 2020-02-26T19:40:26-08:00
-draft: true
+date: 2020-02-27T19:40:26-08:00
+draft: false
+tags: ['csharp']
 ---
 
 An interface defines a contract that specifies what methods a class must implement in order to satisfy that contract. Any class that implements an interface is guaranteed to have those methods or the code will not compile. Creating an interface is similar to creating a class or a struct:
