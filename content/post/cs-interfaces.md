@@ -1,6 +1,6 @@
 ---
 title: 'C# Interfaces'
-date: 2020-02-27T19:40:26-08:00
+date: 2020-02-27
 draft: false
 tags: ['csharp']
 ---
