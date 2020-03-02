@@ -1,7 +1,8 @@
 ---
 title: 'C# Generics'
-date: 2020-02-27T13:05:36-08:00
-draft: true
+date: 2020-03-01
+draft: false
+tags: ['csharp']
 ---
 
 Imagine that you created a method that accepts an array of numbers and loops over them and writes the value at each index to the console. Now imagine you wanted similar functionality, but applied to an array of doubles, strings or booleans. Now, you can't use your original method because it only accepts numbers so you have two alterntives:
