@@ -2,6 +2,7 @@
 title: 'C# Namespaces'
 date: 2020-03-04
 draft: false
+tags: ['csharp']
 ---
 
 In large programs or if you're using third-party libraries, you'll often encounter types with the same name as your own. In order to avoid such naming collisions, you can `namespace` your types. A namespace is simply a grouping of related code under a single name.

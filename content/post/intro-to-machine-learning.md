@@ -2,6 +2,7 @@
 title: 'Intro to Machine Learning'
 date: 2020-03-05
 draft: false
+tags: ['intro', 'machine learning']
 ---
 
 Machine learning is the field of study that gives a computer the ability to learn without being explicitly programmed.
