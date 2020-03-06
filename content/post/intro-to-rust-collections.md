@@ -1,7 +1,8 @@
 ---
-title: 'Intro to Rust Collections'
+title: 'Intro to Rust - Collections'
 date: 2020-03-06
 draft: false
+tags: ['rust', 'intro']
 ---
 
 Collections are data structures that contain multiple values. However, unlike arrays and tuples that are stored on the stack, these types are stored on the heap.
