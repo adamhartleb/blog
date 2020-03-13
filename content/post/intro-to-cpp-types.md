@@ -1,7 +1,7 @@
 ---
 title: 'Intro to C++ - Types'
-date: 2020-03-12T14:25:30-07:00
-draft: true
+date: 2020-03-13
+draft: false
 tags: ['cpp', 'intro']
 ---
 
@@ -149,5 +149,67 @@ struct Person {
 int main() {
     Person p;
     p.age = 23;
+}
+```
+
+Structs can also have methods. A method is a function defined on a struct. For example:
+
+```
+struct Person {
+    int age;
+    void birthday() {
+        age++;
+    }
+}
+```
+
+You can restrict access to certain fields on the struct through access controls. The two major access controls are `public` and `private`. Public fields can be accessed outside of the struct while private fields can only be accessed within the struct. Every field in the struct is public by default. To declare fields as private:
+
+```
+struct Person
+{
+    int birthday() {
+        age++;
+        return age;
+    }
+    void setAge(int _age) {
+        age = _age;
+    }
+
+    private:
+        int age;
+};
+```
+
+Initializing values in a struct can be acheived through a constructor:
+
+```
+struct Person {
+    Person(a) {
+        age = a;
+    }
+    int age;
+}
+```
+
+Or you can use brace initializaiton:
+
+```
+Person p{31};
+```
+
+This is not only limited to structs, but can also be used for primitive types:
+
+```
+float f{31.3};
+```
+
+The opposite of a constructor is called a destructor and it is invoked when the object is destroyed.
+
+```
+struct Earth {
+  ~Earth() { // Earth's destructor
+       printf("Making way for hyperspace bypass");
+  }
 }
 ```
