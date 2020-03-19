@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine learning on Adam Hartleb</title>
+    <link>/tags/machine-learning/</link>
+    <description>Recent content in machine learning on Adam Hartleb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>©2020 Adam Hartleb.</copyright>
+    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intro to Machine Learning</title>
+      <link>/post/intro-to-machine-learning/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/intro-to-machine-learning/</guid>
+      <description>Machine learning is the field of study that gives a computer the ability to learn without being explicitly programmed.
+As an example, the spam filter from your email provider can learn and analyze what emails are being reported as spam and then apply that filter before the email even reaches you. If we were to program this manually, we might use regular expressions to search for certain keywords we provide in the email and feed each email that comes in through that algorithm.</description>
+    </item>
+    
+  </channel>
+</rss>

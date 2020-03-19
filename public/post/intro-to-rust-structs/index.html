@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.64.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Intro to Rust - Structs&nbsp;&ndash;&nbsp;Adam Hartleb</title><link rel="stylesheet" href="/css/core.min.3d2ce6cbea745ca5e44b1f033f9f76347756723f72cbf8309703e3a7a915de7995a8e15f07535317a2cdde891e32c936.css" integrity="sha384-PSzmy&#43;p0XKXkSx8DP592NHdWcj9yy/gwlwPjp6kV3nmVqOFfB1NTF6LN3okeMsk2"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">Adam Hartleb</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a></nav></div></span></div></section><div id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Intro to Rust - Structs</h1><p class="article date">Tuesday, March 3, 2020</p></section><article class="article markdown-body"><p>A struct is a data type that allows you to group multiple related values under a single type. To define a struct in Rust, we use the <code>struct</code> keyword:</p>
+<pre><code>struct Point {
+    x: i32,
+    y: i32,
+}
+</code></pre><p>And we create an instance of the struct like so:</p>
+<pre><code>let p = Point{ x: 3, y: 4 };
+</code></pre><p>And to access a field on the struct we use dot notation:</p>
+<pre><code>println!(&quot;x: {}, y: {}&quot;, p.x, p.y);
+</code></pre><p>If you wanted to change the value of a field, you could write:</p>
+<pre><code>p.x = 18;
+</code></pre><p>However, this would result in an error as we did not create the struct with the <code>mut</code> keyword. Unlike languages like C#, the entire struct must be either mutable or immutable, you cannot delcare specific fields to be mutable.</p>
+<pre><code>let mut p = Point{ x: 3, y: 4 };
+</code></pre><p>If you&rsquo;re familiar with <strong>ES6 JavaScript</strong> then you&rsquo;re probably aware of enhanced object literal syntax which allows you to declare just the property name if a variable exists in scope with the same name as the property. Rust has that too:</p>
+<pre><code>let x = 3;
+let y = 4;
+let p = Point{ x, y };
+</code></pre><p>Similary, in JavaScript, you can spread an object into another one which you can also do in Rust:</p>
+<pre><code>let p = Point{ x, y };
+let p2 = Point{ x: 10, ..p };
+</code></pre><h3 id="struct-methods">Struct Methods</h3>
+<p>Methods are like functions except they are defined on structs. To define a method on a struct:</p>
+<pre><code>struct Square {
+    length: u32,
+}
+
+impl Square {
+    fn area(&amp;self) -&gt; u32 {
+        self.length * 4
+    }
+}
+
+...
+
+let s = Square{length: 3};
+s.area();
+</code></pre><p>The <code>impl</code> keyword stands for <code>implementation</code> which creates an implementation block to define our method in. Rust implicitly passes a reference to the struct as the first argument to the method. Here we are borrowing <code>self</code>, but the method can also take ownership of it or borrow a mutable copy. Also, Rust has automatic referencing and deferencing so given the receiver of our method (&amp;self in this case), Rust will automatically call the method with the proper receiver.</p>
+<p>There are also <code>associated methods</code> which are similar to static methods in OOP languages. An associated method is defined the same way:</p>
+<pre><code>impl Square {
+    fn from(length: u32) -&gt; Rectangle {
+        Square{ length }
+    }
+}
+</code></pre><p>The key difference is that the method has no receiver and it is also invoked differently:</p>
+<pre><code>let s = Square::from(3);
+</code></pre></article><section class="article labels"><a class="tag" href=/tags/rust/>rust</a><a class="tag" href=/tags/intro/>intro</a></section></div><section class="article navigation"><p><a class="link" href="/post/cs-namespaces/"><span class="li">&larr;</span>C# Namespaces</a></p><p><a class="link" href="/post/intro-to-rust-ownership/"><span class="li">&rarr;</span>Intro to Rust - Ownership</a></p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Adam Hartleb.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

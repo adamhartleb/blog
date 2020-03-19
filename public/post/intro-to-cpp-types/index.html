@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.64.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Intro to C&#43;&#43; - Types&nbsp;&ndash;&nbsp;Adam Hartleb</title><link rel="stylesheet" href="/css/core.min.3d2ce6cbea745ca5e44b1f033f9f76347756723f72cbf8309703e3a7a915de7995a8e15f07535317a2cdde891e32c936.css" integrity="sha384-PSzmy&#43;p0XKXkSx8DP592NHdWcj9yy/gwlwPjp6kV3nmVqOFfB1NTF6LN3okeMsk2"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">Adam Hartleb</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a></nav></div></span></div></section><div id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Intro to C++ - Types</h1><p class="article date">Friday, March 13, 2020</p></section><article class="article markdown-body"><p>We&rsquo;ll be investigating the primitive types C++ has to offer in this post and reference types in the following post.</p>
+<h3 id="integers">Integers</h3>
+<p>The Integer type store whole numbers and come in four sizes: <code>short int</code>, <code>int</code>, <code>long int</code>, <code>long long int</code>. In addition, each type can be <code>signed</code> (negative whole numbers permitted) or <code>unsigned</code> (only positive numbers).</p>
+<p>A <code>short</code> is typically 2 bytes in size and an <code>int</code> is 4 bytes. A <code>long</code> is 4 bytes on everything except on 64-bit Linxu/macOS where it is 8 bytes. A <code>long long</code> is 8 bytes.</p>
+<p>You can specify the represenation of the integer as well since binary, octal and hexadeciaml represenations are supported. A binary number is prefixed with <code>0b</code>, an octal number with just <code>0</code> and a hexadecimal number with <code>0x</code>. Here are some examples:</p>
+<pre><code>#include &lt;cstdio&gt;
+
+int main() {
+    unsigned short int myInt = 0b101010;
+    int a = 0123;
+    signed long long anotherInt = 0xFFF;
+}
+</code></pre><h3 id="floats">Floats</h3>
+<p>Floats store an approximation of a real number (due to the finiteness of memory). The amount of memory a float occupies is referred to as its <code>precision</code>. The higher the precision, the more accurate it will be at approximating the provided number. A <code>float</code> provides single precision (4 bytes) and a <code>double</code> provides double precision (8 bytes). Float literals are double precision by default. If you want to create a single precision literal, the number is suffixed with <code>f</code>:</p>
+<pre><code>float n = 3.14f;
+</code></pre><h3 id="characters">Characters</h3>
+<p>There are six character types: <code>char</code> which is the default type and stores one byte and is usually used for ASCII characters. <code>char16_t</code> is used for 2-byte characters sets like UTF-16. <code>char32_t</code> is for 4-byte sets like UTF-32. Additionally, the <code>char</code> type can be signed or unsigned. Finally, there is <code>wchar_t</code> which will be large enough to contain the implementation&rsquo;s locale.</p>
+<p>A character literal is a single character enclosed with single quotes:</p>
+<pre><code>char letter = 'a';
+</code></pre><p>If the character is anything but a char, it must be prefixed with <code>L</code> for <code>wchar_t</code> or <code>u</code> for <code>char16_t</code> and <code>U</code> for <code>char32_t</code>.</p>
+<h3 id="booleans">Booleans</h3>
+<p>A boolean is a type with two states: <code>true</code> or <code>false</code>:</p>
+<pre><code>bool b = true;
+</code></pre><h3 id="misc">Misc</h3>
+<p>If working with raw memory without a specific type, there is the <code>std::byte</code> type defined in the <code>&lt;cstddef&gt;</code> header which is just a collection of bits.</p>
+<p>Another type in the <code>&lt;cstddef&gt;</code> header is the <code>size_t</code> type which encodes the size of objects and is guaranteed to represent the maximum size of all objects. The <code>sizeof()</code> function returns a <code>size_t</code>.</p>
+<p>The <code>void</code> type is only used for function to indicate it returns nothing.</p>
+<h3 id="arrays">Arrays</h3>
+<p>An array is a sequence of identical types with a specified length. To create an array of 10 integers, we can write:</p>
+<pre><code>int myArray[10];
+</code></pre><p>Or you can initialize it and allow the compiler to infer its length:</p>
+<pre><code>int myArray[] = {1, 2, 3};
+</code></pre><p>To access an element in an array we use its 0-based index:</p>
+<pre><code>myArray[1];
+</code></pre><h3 id="loops">Loops</h3>
+<p>The standard for loop looks like:</p>
+<pre><code>for (int i = 0; i &lt; 10; i++) {
+    ...
+}
+</code></pre><p>The counter is intialized first, the condition is checked and then the body of the loop is executed. Afterward, the counter is incremented, the condition checked and so on.</p>
+<p>There is also a range based for loop:</p>
+<pre><code>for (int i : myArray) {
+    ...
+}
+</code></pre><p>Which provides a more declarative way of programming and reduces potential bugs like off-by-one errors.</p>
+<p>To grab the number of the elements in an array, you can call <code>sizeof()</code> on the array and divide it by the result of calling <code>sizeof()</code> on the type of that array:</p>
+<pre><code>size_t numOfElements = sizeof(myArray) / sizeof(int);
+</code></pre><h3 id="strings">Strings</h3>
+<p>Like an array a string is a contiguous sequence of characters. A C-style string is such a contiguous block that ends with the null terminating character:</p>
+<pre><code>char sentence[] = &quot;Hello there!&quot;;
+</code></pre><h3 id="enumerations">Enumerations</h3>
+<p>An enumeration is a fixed set of possible values. To declare an enumeration we write:</p>
+<pre><code>enum class Race {
+    Orc,
+    Troll,
+    Tauren,
+    Undead
+};
+</code></pre><p>And to assign it to a variable we write:</p>
+<pre><code>Race r = Race::Troll;
+</code></pre><h3 id="struct">Struct</h3>
+<p>Structs are user-defined types that can be conceptually thought of as an array of different types. To create a struct:</p>
+<pre><code>struct Person {
+    int age;
+    char[256] name;
+};
+
+int main() {
+    Person p;
+    p.age = 23;
+}
+</code></pre><p>Structs can also have methods. A method is a function defined on a struct. For example:</p>
+<pre><code>struct Person {
+    int age;
+    void birthday() {
+        age++;
+    }
+}
+</code></pre><p>You can restrict access to certain fields on the struct through access controls. The two major access controls are <code>public</code> and <code>private</code>. Public fields can be accessed outside of the struct while private fields can only be accessed within the struct. Every field in the struct is public by default. To declare fields as private:</p>
+<pre><code>struct Person
+{
+    int birthday() {
+        age++;
+        return age;
+    }
+    void setAge(int _age) {
+        age = _age;
+    }
+
+    private:
+        int age;
+};
+</code></pre><p>Initializing values in a struct can be acheived through a constructor:</p>
+<pre><code>struct Person {
+    Person(a) {
+        age = a;
+    }
+    int age;
+}
+</code></pre><p>Or you can use brace initializaiton:</p>
+<pre><code>Person p{31};
+</code></pre><p>This is not only limited to structs, but can also be used for primitive types:</p>
+<pre><code>float f{31.3};
+</code></pre><p>The opposite of a constructor is called a destructor and it is invoked when the object is destroyed.</p>
+<pre><code>struct Earth {
+  ~Earth() { // Earth's destructor
+       printf(&quot;Making way for hyperspace bypass&quot;);
+  }
+}
+</code></pre></article><section class="article labels"><a class="tag" href=/tags/cpp/>cpp</a><a class="tag" href=/tags/intro/>intro</a></section></div><section class="article navigation"><p><a class="link" href="/post/intro-to-cpp/"><span class="li">&rarr;</span>Intro to C++ - Getting Started</a></p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Adam Hartleb.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

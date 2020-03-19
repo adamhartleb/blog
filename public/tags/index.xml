@@ -7,15 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>©2020 Adam Hartleb.</copyright>
-    <lastBuildDate>Tue, 25 Feb 2020 10:48:11 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>cpp</title>
+      <link>/tags/cpp/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cpp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>intro</title>
       <link>/tags/intro/</link>
-      <pubDate>Tue, 25 Feb 2020 10:48:11 -0800</pubDate>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/intro/</guid>
       <description></description>
@@ -24,9 +33,27 @@
     <item>
       <title>rust</title>
       <link>/tags/rust/</link>
-      <pubDate>Tue, 25 Feb 2020 10:48:11 -0800</pubDate>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
+      <link>/tags/machine-learning/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>csharp</title>
+      <link>/tags/csharp/</link>
+      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/csharp/</guid>
       <description></description>
     </item>
     
@@ -45,15 +72,6 @@
       <pubDate>Fri, 21 Feb 2020 15:07:11 -0800</pubDate>
       
       <guid>/tags/oop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>csharp</title>
-      <link>/tags/csharp/</link>
-      <pubDate>Thu, 20 Feb 2020 00:00:00 -0800</pubDate>
-      
-      <guid>/tags/csharp/</guid>
       <description></description>
     </item>
     

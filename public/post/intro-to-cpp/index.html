@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.64.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Intro to C&#43;&#43; - Getting Started&nbsp;&ndash;&nbsp;Adam Hartleb</title><link rel="stylesheet" href="/css/core.min.3d2ce6cbea745ca5e44b1f033f9f76347756723f72cbf8309703e3a7a915de7995a8e15f07535317a2cdde891e32c936.css" integrity="sha384-PSzmy&#43;p0XKXkSx8DP592NHdWcj9yy/gwlwPjp6kV3nmVqOFfB1NTF6LN3okeMsk2"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">Adam Hartleb</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a></nav></div></span></div></section><div id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Intro to C++ - Getting Started</h1><p class="article date">Tuesday, March 10, 2020</p></section><article class="article markdown-body"><p>To begin, we write human-redable C++ code in a <em>source file</em> which is then <em>compiled</em> to produce machine code that our computers can run. Here&rsquo;s an example of a minimal source file:</p>
+<pre><code>// main.cpp
+#include &lt;cstdio&gt;
+
+int main() {
+    printf(&quot;Hello, World!&quot;);
+    return 0;
+}
+</code></pre><p>The above declares a function called <code>main</code> which serves as an entry point to our program, after all, the program has to stat somewhere. Within our <code>main</code> function we call another function <code>printf</code> which prints the text to the terminal. Finally, we return <code>0</code> from our function which is known as an <strong>exit code</strong>. Exit codes are integer values that tell the operating system what happened after the program ran. An exit code of <code>0</code> means the program ran successfully.</p>
+<p>You probably noticed the <code>#include &lt;cstdio&gt;</code> part as well. That is necessary to include because the <code>printf</code> is not defined in our program so we have to include its definition in. This is similar to other languages like JavaScript where we import modules via <code>require</code>.</p>
+<h3 id="compiler">Compiler</h3>
+<p>Once we&rsquo;ve written our source code, it&rsquo;s time to compile it to machine code. The compiler has three steps:</p>
+<ol>
+<li>
+<p>The preprocessor manipulates our source code by bringing in the code we included from other files (like our include directive). The result of this stage is a <strong>translation unit</strong>. A translation unit is the basic unit of compilation in C++. It consists of the contents of a single source file, plus the contents of any header files directly or indirectly included by it.</p>
+</li>
+<li>
+<p>The compiler then takes that translation unit and turns it into an <strong>object file</strong> which is the machine code our computer will execute, but not yet. The reason for this intermediary step is it allows us to make incremental builds. You can compile each source file separately without having to recompile the entire program.</p>
+</li>
+<li>
+<p>The final stage is the linker. This is what generates an executable program from our object files. The linker is also responsible for re-arranging your code and filling in the missing parts so that functions in some pieces can successfully call functions defined in other ones.</p>
+</li>
+</ol>
+<p>To get started compiling our source code we can install a compiler. On Windows, we&rsquo;ll use <a href="http://www.mingw.org/"target="_blank">MinGW</a>. Once that is install and compiled, we can write the following in our terminal:</p>
+<pre><code>gcc main.cpp -o main
+main
+</code></pre><p>Which will then print &ldquo;Hello, World!&rdquo; to our terminal.</p>
+<h3 id="basics">Basics</h3>
+<p>Variables in C++ are declared by stating their type first followed by the name of the variable:</p>
+<pre><code>int x;
+</code></pre><p>We can also initialize the variable with a value on the same line:</p>
+<pre><code>int x = 3;
+</code></pre><p>A conditional statement allows us to control the flow of our program. Some basic conditionals include the <code>if</code> statement:</p>
+<pre><code>if (boolean-expression) {
+    // do stuff
+} else if (another-boolean-expression) {
+    // other stuff
+} else {
+    // ...
+}
+</code></pre><p>Functions are blocks of code that accept inputs (arguments) and return an output. A function has the following structure:</p>
+<pre><code>return_type function_name(paramter_1, parameter_2) {
+    return return_value;
+}
+</code></pre><p>An actual implementation looks like:</p>
+<pre><code>bool isEven(int x) {
+    if (x % 2 == 0) {
+        return true;
+    }
+
+    return false;
+}
+</code></pre><p>And to call the function we write:</p>
+<pre><code>bool result = isEven(4);
+</code></pre><p>Comments are notes developers leave for future reference. A single line comment beings with two forward slashes (<code>//</code>):</p>
+<pre><code>// This is a comment
+</code></pre><p>And multi-line comment begins with <code>/*</code> and ends with <code>*/</code>:</p>
+<pre><code>/* this is a multi
+line comment */
+</code></pre></article><section class="article labels"><a class="tag" href=/tags/cpp/>cpp</a><a class="tag" href=/tags/intro/>intro</a></section></div><section class="article navigation"><p><a class="link" href="/post/intro-to-cpp-types/"><span class="li">&larr;</span>Intro to C++ - Types</a></p><p><a class="link" href="/post/intro-to-rust-collections/"><span class="li">&rarr;</span>Intro to Rust - Collections</a></p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Adam Hartleb.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.64.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Intro to Rust - Collections&nbsp;&ndash;&nbsp;Adam Hartleb</title><link rel="stylesheet" href="/css/core.min.3d2ce6cbea745ca5e44b1f033f9f76347756723f72cbf8309703e3a7a915de7995a8e15f07535317a2cdde891e32c936.css" integrity="sha384-PSzmy&#43;p0XKXkSx8DP592NHdWcj9yy/gwlwPjp6kV3nmVqOFfB1NTF6LN3okeMsk2"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">Adam Hartleb</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a></nav></div></span></div></section><div id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Intro to Rust - Collections</h1><p class="article date">Friday, March 6, 2020</p></section><article class="article markdown-body"><p>Collections are data structures that contain multiple values. However, unlike arrays and tuples that are stored on the stack, these types are stored on the heap.</p>
+<h3 id="vectors">Vectors</h3>
+<p>Vectors are similar to arrays except they can grow dynamically. Like an array, it can only store a single data type. To a create a new vector, we write:</p>
+<pre><code>let a: Vec&lt;u32&gt; = Vec::new();
+</code></pre><p>The type annotation above is necessary as we&rsquo;ve created an empty vector so Rust has nothing to infer from. Rust provides a macro to initialize a vector with some values:</p>
+<pre><code>let mut a = vec![1, 2, 3];
+</code></pre><p>To add new values into the vector (make sure the variable is mutable):</p>
+<pre><code>a.push(4);
+a.push(5);
+</code></pre><p>To access an element at a specific index:</p>
+<pre><code>let el: &amp;u32 = &amp;a[2];
+
+// or
+
+match a.get(2) {
+    Some(el) =&gt; println!(&quot;{}&quot;, el),
+    None =&gt; println!(&quot;Nothing here&quot;);
+}
+</code></pre><p>The difference between the two is that the first method will panic if nothing exists at the index we are accessing.</p>
+<p>It is also important to note that accessing an element with the first method borrows the variable so you cannot mutate the vector in the same scope:</p>
+<pre><code>let el: &amp;u32 = &amp;a[2];
+a.push(8); // ERROR
+</code></pre><p>The reason being is that a vector can grow dynamically and as a result, it might need to be allocated in another spot on the heap to do that.</p>
+<p>To iterate over a vector:</p>
+<pre><code>let mut a = vec![1, 2, 3];
+
+for n in &amp;mut a {
+    *n += 50;
+}
+</code></pre><p>We must provide a reference to the vector for the loop otherwise Rust will move the value and it will no longer be accessible outside. The asterisk dereferences <code>n</code> so we can access the value at that location and increment it.</p>
+<p>I initially said that vectors can only hold a single type, but that isn&rsquo;t entirely accurate. You can store a vector of enums and each variant of that enum can hold a different type making it possible.</p>
+<h3 id="strings">Strings</h3>
+<p>The String type (not &amp;str which is stored in the binary) is a growable and mutable UTF-8 string. To create a String:</p>
+<pre><code>let s = String::new();
+</code></pre><p>To create a string literal (<code>&amp;str</code>) we just use quotes:</p>
+<pre><code>let s = &quot;abc&quot;;
+</code></pre><p>You can transform a string literal into a String with the <code>.to_string()</code> or <code>String::from()</code> methods:</p>
+<pre><code>let a = s.to_string();
+</code></pre><p>To append to a String, we can use <code>.push_str()</code>:</p>
+<pre><code>let mut a = String::from(&quot;abc&quot;);
+a.push_str(&quot;def&quot;);
+</code></pre><p>You can also concatenate strings using the <code>+</code> sign as with other languageS:</p>
+<pre><code>let a = String::from(&quot;abc&quot;);
+let b = String::from(&quot;def&quot;);
+let c = a + &amp;b;
+</code></pre><p>The important thing to note here is that <code>a</code> will no longer be accessible since it has been moved. Also note that <code>b</code> is a reference because you cannot add two <code>String</code> types together. If you wanted to add more than two strings together, it becomes a bit of a readability problem:</p>
+<pre><code>let a = String::from(&quot;abc&quot;);
+let b = String::from(&quot;def&quot;);
+let c = String::from(&quot;ghi&quot;);
+let d = a + &amp;b + &amp;b;
+</code></pre><p>So you can use the <code>format!</code> macro instead:</p>
+<pre><code>let d = format!(&quot;{}{}{}&quot;, a, b, c);
+</code></pre><p>It&rsquo;s important to note that strings do not support indexing in Rust. A String is simply a wrapper around <code>Vec&lt;u8&gt;</code>, but that does not mean each single character takes only a single byte. Some characters in UTF-8 occupy multiple bytes so if you have a two-letter word and and the second character occupies two bytes, trying to access <code>word[2]</code> would be accessing the second byte of that second letter yielding something entirely different. Hold on though, why can we then slice a string? While you can do that, if you try to slice on a character boundary, Rust will panic at runtime.</p>
+<p>Regardless, you can still iterate over a string:</p>
+<pre><code>for c in &quot;word&quot;.chars() {
+    println!(&quot;{}&quot;, c);
+}
+</code></pre><h3 id="hash-maps">Hash Maps</h3>
+<p>A hash map is like a dicitonary in Python or C# or an object literal in JavaScript; it maps a key of type <code>K</code> to a value of type <code>V</code> and are useful for quick lookups. To create a new hash map, we&rsquo;ll need to include it first:</p>
+<pre><code>use std::collections::HashMap;
+
+let mut scores = HashMap::new();
+
+scores.insert(String::from(&quot;abc&quot;), 10);
+</code></pre><p>All of the keys of a hash map must be of the same type as well as its values. You can also form a hash map from collecting two vectors:</p>
+<pre><code>let a = vec![1, 2, 3];
+let b = vec![String::from(&quot;a&quot;), String::from(&quot;b&quot;), String::from(&quot;c&quot;)];
+
+let c = HashMap&lt;_, _&gt; = a.iter().zip(b.iter()).collect();
+</code></pre><p>Values that are owned will be moved into the hash map while types that implement the <code>Copy</code> trait will be copied. You can also insert a reference into the hash map as long as the references are valid for the time the hash map is.</p>
+<p>To access a value in a hash map we can use <code>.get()</code>:</p>
+<pre><code>c.get(&amp;b[0]);
+</code></pre><p>Similarly to vectors, the .get() method can be a <code>Some</code> or <code>None</code> type in case we access a key that does not exist. To iterate over a hash map:</p>
+<pre><code>for (key, value) in &amp;c {
+    ...
+}
+</code></pre><p>To add a value, we can use <code>.insert()</code>:</p>
+<pre><code>c.insert(4, String::from(&quot;z&quot;));
+</code></pre><p>And if you want to check if the key already exists (so you don&rsquo;t overwrite the value):</p>
+<pre><code>c.entry(4).or_insert(String::from(&quot;z&quot;));
+</code></pre></article><section class="article labels"><a class="tag" href=/tags/rust/>rust</a><a class="tag" href=/tags/intro/>intro</a></section></div><section class="article navigation"><p><a class="link" href="/post/intro-to-cpp/"><span class="li">&larr;</span>Intro to C++ - Getting Started</a></p><p><a class="link" href="/post/intro-to-machine-learning/"><span class="li">&rarr;</span>Intro to Machine Learning</a></p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Adam Hartleb.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

@@ -7,10 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>©2020 Adam Hartleb.</copyright>
-    <lastBuildDate>Thu, 20 Feb 2020 00:00:00 -0800</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C# Namespaces</title>
+      <link>/post/cs-namespaces/</link>
+      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/cs-namespaces/</guid>
+      <description>In large programs or if you&amp;rsquo;re using third-party libraries, you&amp;rsquo;ll often encounter types with the same name as your own. In order to avoid such naming collisions, you can namespace your types. A namespace is simply a grouping of related code under a single name.
+In our previous articles on C#, you&amp;rsquo;ll notice we used:
+using System;Console.WriteLine(&amp;quot;Hello&amp;quot;);However, this isn&amp;rsquo;t the fully qualified name for the WriteLine method. The full name is System.</description>
+    </item>
+    
+    <item>
+      <title>C# Generics</title>
+      <link>/post/cs-generics/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/cs-generics/</guid>
+      <description>Imagine that you created a method that accepts an array of numbers and loops over them and writes the value at each index to the console. Now imagine you wanted similar functionality, but applied to an array of doubles, strings or booleans. Now, you can&amp;rsquo;t use your original method because it only accepts numbers so you have two alterntives:
+ You could create a method that does the same thing for each type.</description>
+    </item>
+    
+    <item>
+      <title>C# Interfaces</title>
+      <link>/post/cs-interfaces/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/cs-interfaces/</guid>
+      <description>An interface defines a contract that specifies what methods a class must implement in order to satisfy that contract. Any class that implements an interface is guaranteed to have those methods or the code will not compile. Creating an interface is similar to creating a class or a struct:
+public interface IFileReader {void Read(string filename);}As you probably notice, the interface does not implement the method, it only declares it.</description>
+    </item>
     
     <item>
       <title>C# Structs</title>
@@ -19,7 +50,7 @@
       
       <guid>/post/cs-structs/</guid>
       <description>Structs and Classes are constructed very similarly in C#:
-struct Book { private string title; private int[] editions; public string Title { get { return title; } set { title = value; } } public string Author { get; set; } public int[] Editions { get { return editions; } set { editions = value; } } public string Blurb() { return $&amp;quot;{Title} by {Author}&amp;quot;; } } And they are instantiated in the same way:</description>
+struct Book{private string title;private int[] editions;public string Title{get { return title; }set { title = value; }}public string Author { get; set; }public int[] Editions{get { return editions; }set { editions = value; }}public string Blurb(){return $&amp;quot;{Title} by {Author}&amp;quot;;}}And they are instantiated in the same way:</description>
     </item>
     
     <item>
@@ -29,7 +60,7 @@ struct Book { private string title; private int[] editions; public string Title 
       
       <guid>/post/cs-autoimplemented-props/</guid>
       <description>In object-oriented programming, you&amp;rsquo;ll often be creating getters and setters for instance variables. For example:
-class Book { private string title; public Book(string title) { this.title = title; } GetTitle() { return title; } SetTitle(string title) { this.title = title; } } The problem with this is that it&amp;rsquo;s verbose and creating getters and setters is extremely common so it becomes a little cumbersome. Now, you might be thinking &amp;ldquo;If I can just freely get and set the instance variable, why not make its accessibility public?</description>
+class Book{private string title;public Book(string title){this.title = title;}GetTitle(){return title;}SetTitle(string title){this.title = title;}}The problem with this is that it&amp;rsquo;s verbose and creating getters and setters is extremely common so it becomes a little cumbersome. Now, you might be thinking &amp;ldquo;If I can just freely get and set the instance variable, why not make its accessibility public?</description>
     </item>
     
   </channel>

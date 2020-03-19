@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.64.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>C# Generics&nbsp;&ndash;&nbsp;Adam Hartleb</title><link rel="stylesheet" href="/css/core.min.3d2ce6cbea745ca5e44b1f033f9f76347756723f72cbf8309703e3a7a915de7995a8e15f07535317a2cdde891e32c936.css" integrity="sha384-PSzmy&#43;p0XKXkSx8DP592NHdWcj9yy/gwlwPjp6kV3nmVqOFfB1NTF6LN3okeMsk2"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">Adam Hartleb</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a></nav></div></span></div></section><div id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">C# Generics</h1><p class="article date">Sunday, March 1, 2020</p></section><article class="article markdown-body"><p>Imagine that you created a method that accepts an array of numbers and loops over them and writes the value at each index to the console. Now imagine you wanted similar functionality, but applied to an array of doubles, strings or booleans. Now, you can&rsquo;t use your original method because it only accepts numbers so you have two alterntives:</p>
+<ol>
+<li>You could create a method that does the same thing for each type.</li>
+<li>You could use the <code>object</code> type instead of each specific subtype.</li>
+</ol>
+<p>The problem with #1 is that it results in code duplication. If you want to make a change to how each method logs their value, you&rsquo;ll have to apply the change to each method separately. The issue with #2 is that you now need to cast each <code>object</code> type to the specific subtype in order to actually do anything with it or the code own&rsquo;t be type safe. Casting is an expensive operation and it makes your code harder to read.</p>
+<p>In comes <code>generics</code>. Generics provide a way to define type safe classes without having to commit to one specific type. The built-in <code>List</code> class is an example of a generic class. It provides similar functionality to an array except that it can grow and shrink. Here&rsquo;s how you can create an instance of List:</p>
+<pre><code>using System.Collections.Generic;
+
+List&lt;int&gt; listOfNums = new List&lt;int&gt;();
+</code></pre><p>The angle brackets <code>&lt;</code> and <code>&gt;</code> hold what is called a <strong>generic type parameter</strong>. Now if you want to add a number to the list:</p>
+<pre><code>listOfNums.Add(3);
+</code></pre><p>Since we&rsquo;ve specified a generic type parameter of <code>int</code>, the Add method expects us to provide an int.</p>
+<p>Another example of a generic is the <code>Dictionary</code> class. A dictionary is a key-value store. If you open an actual dictionary, you can flip to a word and see its definition. Similarly, a Dictionary in C# has a key (the word) and a value associated with it (the definition). The keys and values don&rsquo;t have to be strings, they can be generic types. Here&rsquo;s how you would create a dictionary:</p>
+<pre><code>Dictionary&lt;string, string&gt; myDictionary = new Dictionary&lt;string, string&gt;();
+</code></pre><p>In the generic type parameters above <code>&lt;string, string&gt;</code> the first string is for the type of the key and the second is for the type of the value. To add to the dictionary, we can write:</p>
+<pre><code>myDictionary[&quot;someKey&quot;] = &quot;here is a value&quot;;
+</code></pre><p>Similarly, to retrieve a value:</p>
+<pre><code>string myValue = myDictionary[&quot;someKey&quot;];
+</code></pre><h3 id="creating-generics">Creating Generics</h3>
+<p>We can also create our own generic classes. Here&rsquo;s an example:</p>
+<pre><code>public class MyGeneric&lt;T&gt;
+{
+    // ...
+}
+</code></pre><p>Here we have another generic type parameter attached to the name of the class. The <code>&lt;T&gt;</code> is the placeholder for our generic type, but it doesn&rsquo;t have to be the letter &ldquo;T&rdquo;. Now we can use that type in our class:</p>
+<pre><code>public class MyGeneric&lt;T&gt;
+{
+    private T[] myArray;
+
+    public MyGeneric()
+    {
+        myArray = new T[3];
+    }
+
+    public void AddValue(int index, T value)
+    {
+        myArray[index] = value;
+    }
+
+    public T GetValue(int index)
+    {
+        return myArray[index];
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var v = new MyGeneric&lt;int&gt;();
+        v.AddValue(0, 4);
+        Console.WriteLine(v.GetValue(0));
+    }
+}
+</code></pre><p>There is still the elephant in the room though. My class can accept a generic type, but we still don&rsquo;t have any idea what type that will be so how can we know what methods are available? You can constrain the generic type to one that implements a specific interface:</p>
+<pre><code>public class MyGeneric&lt;T&gt; where T : ISomeInterface
+{
+    // ...
+}
+</code></pre><p>In addition to classes, methods can be generic as depicted in our opening example.</p>
+<pre><code>public T MyMethod&lt;T&gt;(T someArg)
+{
+    // ...
+}
+</code></pre></article><section class="article labels"><a class="tag" href=/tags/csharp/>csharp</a></section></div><section class="article navigation"><p><a class="link" href="/post/intro-to-rust-ownership/"><span class="li">&larr;</span>Intro to Rust - Ownership</a></p><p><a class="link" href="/post/cs-interfaces/"><span class="li">&rarr;</span>C# Interfaces</a></p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Adam Hartleb.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

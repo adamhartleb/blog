@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cpp on Adam Hartleb</title>
+    <link>/tags/cpp/</link>
+    <description>Recent content in cpp on Adam Hartleb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>©2020 Adam Hartleb.</copyright>
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intro to C&#43;&#43; - Types</title>
+      <link>/post/intro-to-cpp-types/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/intro-to-cpp-types/</guid>
+      <description>We&amp;rsquo;ll be investigating the primitive types C++ has to offer in this post and reference types in the following post.
+Integers The Integer type store whole numbers and come in four sizes: short int, int, long int, long long int. In addition, each type can be signed (negative whole numbers permitted) or unsigned (only positive numbers).
+A short is typically 2 bytes in size and an int is 4 bytes. A long is 4 bytes on everything except on 64-bit Linxu/macOS where it is 8 bytes.</description>
+    </item>
+    
+    <item>
+      <title>Intro to C&#43;&#43; - Getting Started</title>
+      <link>/post/intro-to-cpp/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/intro-to-cpp/</guid>
+      <description>To begin, we write human-redable C++ code in a source file which is then compiled to produce machine code that our computers can run. Here&amp;rsquo;s an example of a minimal source file:
+// main.cpp#include &amp;lt;cstdio&amp;gt;int main() {printf(&amp;quot;Hello, World!&amp;quot;);return 0;}The above declares a function called main which serves as an entry point to our program, after all, the program has to stat somewhere. Within our main function we call another function printf which prints the text to the terminal.</description>
+    </item>
+    
+  </channel>
+</rss>

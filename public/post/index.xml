@@ -7,10 +7,116 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>©2020 Adam Hartleb.</copyright>
-    <lastBuildDate>Tue, 25 Feb 2020 10:48:11 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Intro to C&#43;&#43; - Types</title>
+      <link>/post/intro-to-cpp-types/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/intro-to-cpp-types/</guid>
+      <description>We&amp;rsquo;ll be investigating the primitive types C++ has to offer in this post and reference types in the following post.
+Integers The Integer type store whole numbers and come in four sizes: short int, int, long int, long long int. In addition, each type can be signed (negative whole numbers permitted) or unsigned (only positive numbers).
+A short is typically 2 bytes in size and an int is 4 bytes. A long is 4 bytes on everything except on 64-bit Linxu/macOS where it is 8 bytes.</description>
+    </item>
+    
+    <item>
+      <title>Intro to C&#43;&#43; - Getting Started</title>
+      <link>/post/intro-to-cpp/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/intro-to-cpp/</guid>
+      <description>To begin, we write human-redable C++ code in a source file which is then compiled to produce machine code that our computers can run. Here&amp;rsquo;s an example of a minimal source file:
+// main.cpp#include &amp;lt;cstdio&amp;gt;int main() {printf(&amp;quot;Hello, World!&amp;quot;);return 0;}The above declares a function called main which serves as an entry point to our program, after all, the program has to stat somewhere. Within our main function we call another function printf which prints the text to the terminal.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Rust - Collections</title>
+      <link>/post/intro-to-rust-collections/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/intro-to-rust-collections/</guid>
+      <description>Collections are data structures that contain multiple values. However, unlike arrays and tuples that are stored on the stack, these types are stored on the heap.
+Vectors Vectors are similar to arrays except they can grow dynamically. Like an array, it can only store a single data type. To a create a new vector, we write:
+let a: Vec&amp;lt;u32&amp;gt; = Vec::new();The type annotation above is necessary as we&amp;rsquo;ve created an empty vector so Rust has nothing to infer from.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Machine Learning</title>
+      <link>/post/intro-to-machine-learning/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/intro-to-machine-learning/</guid>
+      <description>Machine learning is the field of study that gives a computer the ability to learn without being explicitly programmed.
+As an example, the spam filter from your email provider can learn and analyze what emails are being reported as spam and then apply that filter before the email even reaches you. If we were to program this manually, we might use regular expressions to search for certain keywords we provide in the email and feed each email that comes in through that algorithm.</description>
+    </item>
+    
+    <item>
+      <title>C# Namespaces</title>
+      <link>/post/cs-namespaces/</link>
+      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/cs-namespaces/</guid>
+      <description>In large programs or if you&amp;rsquo;re using third-party libraries, you&amp;rsquo;ll often encounter types with the same name as your own. In order to avoid such naming collisions, you can namespace your types. A namespace is simply a grouping of related code under a single name.
+In our previous articles on C#, you&amp;rsquo;ll notice we used:
+using System;Console.WriteLine(&amp;quot;Hello&amp;quot;);However, this isn&amp;rsquo;t the fully qualified name for the WriteLine method. The full name is System.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Rust - Structs</title>
+      <link>/post/intro-to-rust-structs/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/intro-to-rust-structs/</guid>
+      <description>A struct is a data type that allows you to group multiple related values under a single type. To define a struct in Rust, we use the struct keyword:
+struct Point {x: i32,y: i32,}And we create an instance of the struct like so:
+let p = Point{ x: 3, y: 4 };And to access a field on the struct we use dot notation:
+println!(&amp;quot;x: {}, y: {}&amp;quot;, p.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Rust - Ownership</title>
+      <link>/post/intro-to-rust-ownership/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/intro-to-rust-ownership/</guid>
+      <description>Every programming language has to have some way to manage the memory it consumes while the program is running. In higher level languages like JavaScript this is managed with a garbage collector or with lower level languages like C, the memory is allocated and freed manually. Rust uses a different approach with a concept known as ownership.
+Stack and Heap The stack and heap are parts of memory that your program can utilize at runtime.</description>
+    </item>
+    
+    <item>
+      <title>C# Generics</title>
+      <link>/post/cs-generics/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/cs-generics/</guid>
+      <description>Imagine that you created a method that accepts an array of numbers and loops over them and writes the value at each index to the console. Now imagine you wanted similar functionality, but applied to an array of doubles, strings or booleans. Now, you can&amp;rsquo;t use your original method because it only accepts numbers so you have two alterntives:
+ You could create a method that does the same thing for each type.</description>
+    </item>
+    
+    <item>
+      <title>C# Interfaces</title>
+      <link>/post/cs-interfaces/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/cs-interfaces/</guid>
+      <description>An interface defines a contract that specifies what methods a class must implement in order to satisfy that contract. Any class that implements an interface is guaranteed to have those methods or the code will not compile. Creating an interface is similar to creating a class or a struct:
+public interface IFileReader {void Read(string filename);}As you probably notice, the interface does not implement the method, it only declares it.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Rust - Variables</title>
+      <link>/post/intro-to-rust-variables/</link>
+      <pubDate>Wed, 26 Feb 2020 10:48:11 -0800</pubDate>
+      
+      <guid>/post/intro-to-rust-variables/</guid>
+      <description>Variables are conceptually labeled boxes that we can store values. The box is the address in memory where the value is stored and the label is just a human readable alias for that address.
+All variable declarations in Rust start with the let keyword followed by the name we assign to variable. Here we are declaring a variable called z and assigning the value 12 to it:
+let z = 12;By default, all variables in Rust are immutable meaning you cannot re-assign a value to them.</description>
+    </item>
     
     <item>
       <title>Intro to Rust - Hello World</title>
@@ -21,7 +127,7 @@
       <description>Installing and configuring Rust is a breeze with rustup which is an installer for Rust. You can download it by visiting:
 https://rustup.rs/
 And following the onscreen instructions. You can confirm that the installation has worked by running:
-rustc --version The rustup installation also comes with another command line tool called cargo which is the Rust packager manager &amp;ndash; akin to npm for Node. Rust packages are called crates and there is an online repository of crates visible here:</description>
+rustc --versionThe rustup installation also comes with another command line tool called cargo which is the Rust packager manager &amp;ndash; akin to npm for Node. Rust packages are called crates and there is an online repository of crates visible here:</description>
     </item>
     
     <item>
@@ -49,7 +155,7 @@ rustc --version The rustup installation also comes with another command line too
       
       <guid>/post/cs-structs/</guid>
       <description>Structs and Classes are constructed very similarly in C#:
-struct Book { private string title; private int[] editions; public string Title { get { return title; } set { title = value; } } public string Author { get; set; } public int[] Editions { get { return editions; } set { editions = value; } } public string Blurb() { return $&amp;quot;{Title} by {Author}&amp;quot;; } } And they are instantiated in the same way:</description>
+struct Book{private string title;private int[] editions;public string Title{get { return title; }set { title = value; }}public string Author { get; set; }public int[] Editions{get { return editions; }set { editions = value; }}public string Blurb(){return $&amp;quot;{Title} by {Author}&amp;quot;;}}And they are instantiated in the same way:</description>
     </item>
     
     <item>
@@ -59,7 +165,7 @@ struct Book { private string title; private int[] editions; public string Title 
       
       <guid>/post/cs-autoimplemented-props/</guid>
       <description>In object-oriented programming, you&amp;rsquo;ll often be creating getters and setters for instance variables. For example:
-class Book { private string title; public Book(string title) { this.title = title; } GetTitle() { return title; } SetTitle(string title) { this.title = title; } } The problem with this is that it&amp;rsquo;s verbose and creating getters and setters is extremely common so it becomes a little cumbersome. Now, you might be thinking &amp;ldquo;If I can just freely get and set the instance variable, why not make its accessibility public?</description>
+class Book{private string title;public Book(string title){this.title = title;}GetTitle(){return title;}SetTitle(string title){this.title = title;}}The problem with this is that it&amp;rsquo;s verbose and creating getters and setters is extremely common so it becomes a little cumbersome. Now, you might be thinking &amp;ldquo;If I can just freely get and set the instance variable, why not make its accessibility public?</description>
     </item>
     
     <item>
